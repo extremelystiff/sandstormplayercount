@@ -1,41 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Insurgency Sandstorm Player Count</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>Player Count</title>
+  <meta http-equiv="refresh" content="300">
 </head>
 <body>
-  <canvas id="playerCountChart"></canvas>
-
-  <script>
-    fetch('https://script.google.com/macros/s/AKfycbwLGl0bcxXx-ypBAuYtCc0du-Fp-iccSTOkZVB-Tr2mqAxIDeqgW6xkxrEC-LPdnZQxmw/exec')
-      .then(response => response.json())
-      .then(data => {
-        // Update the chart with the fetched data
-        updateChart(data.playerCount, data.averagePlayerCount);
-      });
-
-    function updateChart(playerCount, averagePlayerCount) {
-      var ctx = document.getElementById('playerCountChart').getContext('2d');
-      new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: ['Current Player Count', 'Average Player Count'],
-          datasets: [{
-            label: 'Player Count',
-            data: [playerCount, averagePlayerCount],
-            backgroundColor: ['rgba(75, 192, 192, 0.6)', 'rgba(255, 99, 132, 0.6)']
-          }]
-        },
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true
-            }
-          }
-        }
-      });
-    }
-  </script>
+  <img src="playercount.png" alt="Player Count">
 </body>
 </html>
