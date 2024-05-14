@@ -10,8 +10,21 @@
   <meta property="og:image" content="https://extremelystiff.github.io/sandstormplayercount/playercount.png">
   <meta property="og:url" content="https://extremelystiff.github.io/sandstormplayercount/">
   <meta property="og:type" content="website">
+  
+  <script>
+    function updateImage() {
+      var img = document.getElementById('playerCountImage');
+      var timestamp = new Date().getTime();
+      img.src = 'playercount.png?t=' + timestamp;
+    }
+    
+    window.onload = function() {
+      updateImage();
+      setInterval(updateImage, 300000); // Update every 5 minutes (300000 milliseconds)
+    };
+  </script>
 </head>
 <body>
-  <img src="playercount.png" alt="Player Count">
+  <img id="playerCountImage" src="" alt="Player Count">
 </body>
 </html>
