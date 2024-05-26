@@ -37,7 +37,13 @@
 <body>
   <div class="container">
     <h1>Insurgency Sandstorm</h1>
-    <div class="player-count" id="playerCount">2177</div>
+    <div class="player-count" id="playerCount">Loading...</div>
   </div>
+
+  <script>
+    function resizeIframe(obj) {
+      obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+    }
+  </script>
 </body>
 </html>
