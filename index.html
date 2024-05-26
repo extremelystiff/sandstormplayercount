@@ -1,31 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Player Count</title>
+  <title>Insurgency Sandstorm Player Count</title>
   <meta http-equiv="refresh" content="300">
-  
-  <!-- Open Graph tags -->
-  <meta property="og:title" content="Insurgency Sandstorm">
-  <meta property="og:description" content="Current Player Count: 2177">
-  <meta property="og:image" content="https://extremelystiff.github.io/sandstormplayercount/playercount.png">
-  <meta property="og:url" content="https://extremelystiff.github.io/sandstormplayercount/">
-  <meta property="og:type" content="website">
-  
-  <script>
-    function updateImage() {
-      var img = document.getElementById('playerCountImage');
-      var timestamp = new Date().getTime();
-      img.src = 'playercount.png?t=' + timestamp;
+  <style>
+    body {
+      background-color: #1c1c1c;
+      color: #ffffff;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
     }
-    
-    window.onload = function() {
-      updateImage();
-      setInterval(updateImage, 300000); // Update every 5 minutes (300000 milliseconds)
-    };
-  </script>
-  <script>window.location.replace('https://i.imgur.com/8ky3hq3.png');</script>
+
+    .container {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .player-count {
+      font-size: 96px;
+      font-weight: bold;
+      color: #ff4500;
+      text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
 </head>
 <body>
-  <img id="playerCountImage" src="" alt="Player Count">
+  <div class="container">
+    <h1>Insurgency Sandstorm</h1>
+    <div class="player-count" id="playerCount">Loading...</div>
+  </div>
 </body>
 </html>
